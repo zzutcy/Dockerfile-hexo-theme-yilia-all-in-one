@@ -1,0 +1,8 @@
+#!/bin/bash
+GIT_REPO=/home/git/hexo.git #git 仓库
+TMP_GIT_CLONE=/tmp/hexo
+PUBLIC_WWW=/var/www/hexo #网站目录
+rm -rf ${TMP_GIT_CLONE}
+git clone $GIT_REPO $TMP_GIT_CLONE
+rm -rf ${PUBLIC_WWW}/*
+cp -rf ${TMP_GIT_CLONE}/* ${PUBLIC_WWW}
