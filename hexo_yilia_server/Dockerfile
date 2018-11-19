@@ -18,8 +18,8 @@ RUN rpm -ivh /root/nginx-release-centos-7-0.el7.ngx.noarch.rpm    \
     && su git  \
     && git init --bare hexo.git
 
-ADD post-receive /home/git
-RUN mv /home/git/post-receive /home/git/hexo.git/hooks/ \
+ADD post-receive /home/git/
+RUN mv /home/git/post-receive /home/git/hexo.git/hooks/post-receive \
     && chmod +x /home/git/hexo.git/hooks/post-receive  \
     && chown -R git.git /home/git 
 
